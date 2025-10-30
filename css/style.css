@@ -1,0 +1,205 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(31, 31, 221);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    background-color: rgb(11, 11, 202);
+}
+
+a{
+    text-decoration: none;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    ul{
+        gap: 0px;
+    }
+
+    main div{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img{
+        width: 90px;
+    }
+    }
+
+    /*Background*/
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ====== Light Mode ====== */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+header, footer {
+  background-color: #f0f0f0;
+  padding: 15px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #2a63ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #1f4dcc;
+}
+
+/* ====== Dark Mode ====== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+
+  header, footer {
+    background-color: #1e1e1e;
+  }
+
+  .nav-button {
+    background-color: #2a63ff;
+    color: white;
+  }
+
+  .nav-button:hover {
+    background-color: #1f4dcc;
+  }
+}
+
+/*Button*/
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/*animation*/
+
+.btn-press {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(145deg, #0098fd, #0368ff);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 15px rgba(8, 70, 121, 0.37);
+}
+
+.btn-press:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(11, 11, 202, 0.4);
+    background: linear-gradient(145deg, #08a9f3, #07a5d4);
+}
+
+.btn-press:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(4, 143, 236, 0.2);
+    transition: all 0.1s ease;
+}
+/* second animation*/
+.btn-press {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-press::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(3, 163, 255, 0.521);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.btn-press:active::after {
+    width: 100px;
+    height: 100px;
+}
+
+/*rolling animation*/
+/* Untuk multiple items yang muncul berurutan */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.stagger-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay bertahap */
+/* Untuk header yang hide/show saat scroll */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(11, 11, 202);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+header.hide {
+    transform: translateY(-100%);
+}
+
+header.show {
+    transform: translateY(0);
+}
